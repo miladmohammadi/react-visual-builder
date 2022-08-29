@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "antd/dist/antd.css";
+import "./App.css";
+import Blocks from "./components/Blocks";
+import CanvasIframe from "./components/CanvasIframe";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        boxSizing: "border-box",
+      }}
+    >
+      <div className="main" style={{ width: "calc(100vw - 20rem)" }}>
+        <CanvasIframe />
+      </div>
+      <div className="sidebar" style={{ width: "20rem", background: "#aaa" }}>
+        <Blocks />
+      </div>
     </div>
   );
 }
